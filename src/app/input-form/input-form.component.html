@@ -1,0 +1,35 @@
+<div>
+  <h3>Enter Site Details</h3>
+  <form (ngSubmit)="onSubmit()">
+    <div *ngFor="let node of nodes; let i = index" class="node-form">
+      <h4>Node {{ i + 1 }}</h4>
+      <label>
+        Latitude:
+        <input [(ngModel)]="node.latitude" name="latitude-{{ i }}" required>
+      </label>
+      <label>
+        Longitude:
+        <input [(ngModel)]="node.longitude" name="longitude-{{ i }}" required>
+      </label>
+      <label>
+        Type:
+        <input [(ngModel)]="node.type" name="type-{{ i }}" required>
+      </label>
+      <label>
+        Capacity:
+        <input [(ngModel)]="node.capacity" name="capacity-{{ i }}" required>
+      </label>
+      <label>
+        Demand:
+        <input [(ngModel)]="node.demand" name="demand-{{ i }}" required>
+      </label>
+      <label>
+        Max Load:
+        <input [(ngModel)]="node.maxLoad" name="maxLoad-{{ i }}" required>
+      </label>
+      <hr>
+    </div>
+    <button type="button" (click)="addNode()">Add Node</button>
+    <button type="submit">Submit</button>
+  </form>
+</div>
